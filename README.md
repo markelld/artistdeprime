@@ -26,26 +26,22 @@
 
 ## Overview
 
-_**Project Title** is lorem ipsum dolor sit amet. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
+_**Project Title** 
 
-
-<br>
+The project inspiration came from my love for art and photography. So I decided to create a site for artist to post there work,events or anything they wish. My goal is to create a community online strictly for artist.
 
 ## MVP
 
-> The Minimum Viable Product should be a well-planned, easily-communicated product, ensuring that the client's deliverable will be achievable and meet specifications within the time frame estimated.
-
-_The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
+> The app will include authentication and crud functionality for users to post,edit and delete there posts(only posts that belong to them). Users will also be able to comment on other users posts.  
 
 <br>
 
 ### Goals
 
-- _Lorem ipsum, dolor sit amet,_
-- _consectetur adipiscing elit._
-- _Phasellus dapibus fermentum risus vitae bibendum._
-- _Integer vel ipsum mollis odio sollicitudin ornare eu vel ex._
-- _etc._
+- secure authentication
+- fully functional crud
+- fully responsive design
+- lay foundation for app that can scale upwards in the future
 
 <br>
 
@@ -55,11 +51,15 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
-|      React       | _Lorem ipsum dolor sit amet, consectetur._ |
-|   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-| React SemanticUI | _Lorem ipsum dolor sit amet, consectetur._ |
-|     Express      | _Lorem ipsum dolor sit amet, consectetur._ |
-|  Express Router  | _Lorem ipsum dolor sit amet, consectetur._ |
+|      React       | _used to create front-end of app._ |
+|      Axios       | _used for API calls to back-end._ |
+| React Router Bootstrap | _navbar routing._ |
+| React Router Dom | _routing for pages._ |
+| React Bootstrap  | _component library for styling._ | 
+|  Heroku          | _backend deployment._ | 
+|  Netlify         | _frontend deployment._ | 
+| Ruby on Rails    | _used to create back-end of app._ | 
+| Postgresql       | _used to create database._ |
 
 <br>
 
@@ -126,10 +126,23 @@ src
 > Use this section to estimate the time necessary to build out each of the components you've described above.
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
-| ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Add Contact Form    |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
-| Create CRUD Actions |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
+| ------------------- | :------: | :------------: | :-----------: | :---------: | 
+| back-end auth       |          |     4 hrs      |       hrs     |             | 
+|  backend crud       |    H    |     6 hrs      |       hrs     |             | 
+| front-end file structure|    H     |     2 hrs      |       hrs     |             | 
+| front-end crud      |          |     4 hrs      |       hrs     |             | 
+| Add Contact Form    |    L     |     3 hrs      |       hrs     |             |
+| Create CRUD Actions |    H     |     3 hrs      |       hrs     |             |
+| TOTAL               |          |     6 hrs      |       hrs     |             | 
+| Add Contact Form    |    L     |     3 hrs      |       hrs     |             |
+| Create CRUD Actions |    H     |     3 hrs      |       hrs     |             |
+| TOTAL               |          |     6 hrs      |       hrs     |             | 
+| Add Contact Form    |    L     |     3 hrs      |       hrs     |             |
+| Create CRUD Actions |    H     |     3 hrs      |       hrs     |             |
+| TOTAL               |          |     6 hrs      |       hrs     |             | 
+| Add Contact Form    |    L     |     3 hrs      |       hrs     |             |
+| Create CRUD Actions |    H     |     3 hrs      |       hrs     |             |
+| TOTAL               |          |     6 hrs      |       hrs     |             |
 
 > _Why is this necessary? Time frames are key to the development cycle. You have limited time to code your app, and your estimates can then be used to evaluate possibilities of your MVP and post-MVP based on time needed. It's best you assume an additional hour for each component, as well as a few hours added to the total time, to play it safe._
 
@@ -147,8 +160,10 @@ src
 
 ## Post-MVP
 
-> Use this section to document ideas you've had that would be fun (or necessary) for your Post-MVP. This will be helpful when you return to your project after graduation!
-
+> incorportate chat room 
+> incorporate payment method for purchasing art,tickets
+> individual profile page for users 
+> filter or feed page to search through posts 
 ***
 
 ## Code Showcase
