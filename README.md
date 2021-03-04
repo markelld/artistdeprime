@@ -1,5 +1,3 @@
-# artistdeprime  
-
 ## Overview
 
 _**Project Title**  
