@@ -135,8 +135,11 @@ src
 ## Post-MVP
 
 > incorportate chat room 
+> 
 > incorporate payment method for purchasing art,tickets
+> 
 > individual profile page for users 
+> 
 > filter or feed page to search through posts 
 ***
 
