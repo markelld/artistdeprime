@@ -23,8 +23,6 @@ The project inspiration came from my love for art and photography. So I decided 
 
 ### Libraries and Dependencies
 
-> Use this section to list all supporting libraries and dependencies, and their role in the project. Below is an example - this needs to be replaced!
-
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
 |      React       | _used to create front-end of app._ |
