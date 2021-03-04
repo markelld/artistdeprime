@@ -1,33 +1,11 @@
 # artistdeprime  
 
-# PROJECT 4 README <!-- omit in toc -->
-
-> The Project Planning section **should be completed** for your project pitch with instructors.
->
-> To ensure correct Markdown, copy and paste the raw template code into your project repo README file. Remove ALL template instructions and replace with your project details.
-
-- [Overview](#overview)
-- [MVP](#mvp)
-  - [Goals](#goals)
-  - [Libraries and Dependencies](#libraries-and-dependencies)
-  - [Client (Front End)](#client-front-end)
-    - [Wireframes](#wireframes)
-    - [Component Tree](#component-tree)
-    - [Component Hierarchy](#component-hierarchy)
-    - [Component Breakdown](#component-breakdown)
-    - [Time Estimates](#time-estimates)
-  - [Server (Back End)](#server-back-end)
-    - [ERD Model](#erd-model)
-- [Post-MVP](#post-mvp)
-- [Code Showcase](#code-showcase)
-- [Code Issues & Resolutions](#code-issues--resolutions)
-
-<br>
-
 ## Overview
 
-_**Project Title** 
+_**Project Title**  
 
+Artiste Déprimé
+  
 The project inspiration came from my love for art and photography. So I decided to create a site for artist to post there work,events or anything they wish. My goal is to create a community online strictly for artist.
 
 ## MVP
@@ -127,22 +105,22 @@ src
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: | 
-| back-end auth       |          |     4 hrs      |       hrs     |             | 
-|  backend crud       |    H    |     6 hrs      |       hrs     |             | 
-| front-end file structure|    H     |     2 hrs      |       hrs     |             | 
-| front-end crud      |          |     4 hrs      |       hrs     |             | 
-| Add Contact Form    |    L     |     3 hrs      |       hrs     |             |
-| Create CRUD Actions |    H     |     3 hrs      |       hrs     |             |
-| TOTAL               |          |     6 hrs      |       hrs     |             | 
-| Add Contact Form    |    L     |     3 hrs      |       hrs     |             |
-| Create CRUD Actions |    H     |     3 hrs      |       hrs     |             |
-| TOTAL               |          |     6 hrs      |       hrs     |             | 
-| Add Contact Form    |    L     |     3 hrs      |       hrs     |             |
-| Create CRUD Actions |    H     |     3 hrs      |       hrs     |             |
-| TOTAL               |          |     6 hrs      |       hrs     |             | 
-| Add Contact Form    |    L     |     3 hrs      |       hrs     |             |
-| Create CRUD Actions |    H     |     3 hrs      |       hrs     |             |
-| TOTAL               |          |     6 hrs      |       hrs     |             |
+| back-end auth       |    H      |   4 hrs  |       hrs     |             | 
+| backend crud        |    H    |     6 hrs  |       hrs     |             | 
+| front-end file structure|    H     |  2 hrs  |    hrs      |             | 
+| front-end Auth      |          |    4 hrs  |       hrs     |             | 
+| front-end axios calls |    H     |  3 hrs  |       hrs     |             |
+| front-end CRUD      |    H    |     3 hrs    |       hrs     |             |
+| auth testing        |    H    |     6 hrs    |       hrs     |             |  
+| crud testing        |    H    |     6 hrs    |       hrs     |             | 
+| Navbar routes       |    H     |    1.5 hrs  |       hrs     |             |
+| App routes          |    H     |     2 hrs  |       hrs     |             |
+| front-end jsx screens |   H    |     6 hrs  |       hrs     |             | 
+|  create components  |    H     |     3 hrs  |       hrs     |             |
+| styling components  |    H     |     3 hrs  |       hrs     |             |
+| styling screens     |    H      |     6 hrs |       hrs     |             | 
+| meadia queries      |    H     |     2 hrs  |       hrs     |             |
+| TOTAL               |          |     hrs    |       hrs     |             |
 
 > _Why is this necessary? Time frames are key to the development cycle. You have limited time to code your app, and your estimates can then be used to evaluate possibilities of your MVP and post-MVP based on time needed. It's best you assume an additional hour for each component, as well as a few hours added to the total time, to play it safe._
 
