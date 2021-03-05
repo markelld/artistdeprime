@@ -58,9 +58,6 @@ src
 |__app.js 
 |__index.js 
 |__ Components/ 
-      |__PostCard 
-                 |__PostCard.css 
-                 |__PostCard.jsx
       |__ Layout/ 
                  |__Layout.css 
                  |__Layout.jsx 
@@ -107,8 +104,7 @@ src
 
 | Component           | Type     | State   | Props     | Description   |
 | ------------------- | :------: | :-----: | :-------: | :-----------: | 
-| Footer              |  functional | N | N |  link to repo on contact form  |  
-| PostCard            |  functional | N | N |  Css card componet to house individual posts | 
+| Footer              |  functional | N | N |  link to repo on contact form  |   
 | Header              |  functional | Y | N |  The header will provide navigation and username state |            
 | sign in/register    |  functional | N | Y | The user will be able to register for and login into their account. |
 | Home                |  functional | Y | Y | The home page while render user posts and house methods passed by props |       
