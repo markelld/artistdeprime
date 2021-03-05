@@ -42,9 +42,10 @@ The project inspiration came from my love for art and photography. So I decided 
 #### Wireframes
 
 - Desktop 
+![Wireframes]()
 
-
-- Mobile 
+- Mobile  
+![Wireframes]()
 
 #### Component Tree
 
