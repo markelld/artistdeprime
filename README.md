@@ -57,15 +57,46 @@ The project inspiration came from my love for art and photography. So I decided 
 
 ``` structure
 
-src
-|__ assets/
-      |__ fonts
-      |__ graphics
-      |__ images
-      |__ mockups
-|__ components/
-      |__ Header.jsx
-|__ services/
+src 
+|__app.js 
+|__index.js 
+|__ Components/ 
+      |__PostCard 
+                 |__PostCard.css 
+                 |__PostCard.jsx
+      |__ Layout/ 
+                 |__Layout.css 
+                 |__Layout.jsx 
+      |__Header/
+                |__Header.css 
+                |__Header.jsx  
+      |__Footer/
+                |__Footer.css 
+                |__Footer.jsx                  
+ |__ Screens/
+      |__ SignIn/ 
+                 |__SignIn.css 
+                 |__SignIn.jsx 
+      |__Register/
+                |__Register.css 
+                |__Register.jsx  
+      |__Home___/
+                |__Home.css 
+                |__Home.jsx  
+     |__PostDetail/ 
+                 |__PostDetail.css 
+                 |__PostDetail.jsx 
+      |__PostEdit/
+                |__PostEdit.css 
+                |__PostEdit.jsx  
+      |__Post___/
+                |__PostEdit.css 
+                |__PostEdit.jsx  
+  |__ Services__/
+                |__api-helper.js
+                |__posts.js
+                |__users.js
+                |__comments.js
 
 ```
 
@@ -84,7 +115,7 @@ src
 | back-end auth       |    H      |   4 hrs  |       hrs     |             | 
 | backend crud        |    H    |     6 hrs  |       hrs     |             | 
 | front-end file structure|    H     |  2 hrs  |    hrs      |             | 
-| front-end Auth      |          |    4 hrs  |       hrs     |             | 
+| front-end Auth      |    H      |    4 hrs  |       hrs     |             | 
 | front-end axios calls |    H     |  3 hrs  |       hrs     |             |
 | front-end CRUD      |    H    |     3 hrs    |       hrs     |             |
 | auth testing        |    H    |     6 hrs    |       hrs     |             |  
@@ -119,7 +150,7 @@ src
 
 ## Code Showcase
 
-> Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
+
 
 ## Code Issues & Resolutions
 
