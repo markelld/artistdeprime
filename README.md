@@ -87,8 +87,8 @@ src
                 |__PostEdit.css 
                 |__PostEdit.jsx  
       |__Post___/
-                |__PostEdit.css 
-                |__PostEdit.jsx  
+                |__Post.css 
+                |__Post.jsx  
   |__ Services__/
                 |__api-helper.js
                 |__posts.js
@@ -101,7 +101,21 @@ src
 
 ![CH](https://github.com/markelld/artistedeprime/blob/main/CH.png)
 
-[Component tree](url)
+[Component tree](url) 
+
+#### Component Breakdown 
+
+| Component           | Type     | State   | Props     | Description   |
+| ------------------- | :------: | :-----: | :-------: | :-----------: | 
+| Footer              |  functional | N | N |  link to repo on contact form  |  
+| PostCard            |  functional | N | N |  Css card componet to house individual posts | 
+| Header              |  functional | Y | N |  The header will provide navigation and username state |            
+| sign in/register    |  functional | N | Y | The user will be able to register for and login into their account. |
+| Home                |  functional | Y | Y | The home page while render user posts and house methods passed by props |       
+| PostDetails         |  functional | Y | Y | The post will render individually and users will be able to comment. | 
+| Post                |  functional | Y | Y | Users will be able to post new content which will display on home page | 
+| PostEdit            |  functional | Y | Y | Owners of posts will be able to delete or edit there posts |  
+| Layout              |  functional | N | N | This will serve as layout for every page for after login/register| 
 
 #### Time Estimates
 
