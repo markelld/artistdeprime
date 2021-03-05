@@ -104,13 +104,10 @@ src
 
 ### Server (Back End)
 
-#### ERD Model
+#### ERD Model 
 
-> Use this section to display an image of a computer generated ERD model. You can use draw.io, Lucidchart or another ERD tool.
+![ERD](https://github.com/markelld/artistedeprime/blob/main/data.flow.png)
 
-<br>
-
-***
 
 ## Post-MVP
 
