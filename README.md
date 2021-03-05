@@ -99,7 +99,7 @@ src
 
 #### Component Tree
 
-> Use this section to include a link to your component tree.
+![CH](https://github.com/markelld/artistedeprime/blob/main/CH.png)
 
 [Component tree](url)
 
