@@ -42,10 +42,10 @@ The project inspiration came from my love for art and photography. So I decided 
 #### Wireframes
 
 - Desktop 
-![Wireframes]()
+![Wireframes](https://github.com/markelld/artistedeprime/blob/main/web2.png)
 
 - Mobile  
-![Wireframes]()
+![Wireframes](https://github.com/markelld/artistedeprime/blob/main/mobile1.png)
 
 #### Component Tree
 
