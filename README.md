@@ -140,7 +140,7 @@ src
 > 
 > individual profile page for users 
 > 
-> filter or feed page to search through posts 
+> search or filter for  home page to through posts 
 ***
 
 ## Code Showcase
