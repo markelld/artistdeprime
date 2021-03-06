@@ -10,7 +10,10 @@ class PostsController < ApplicationController
 
   # GET /posts/1
   def show
-    render json: @post
+    @comments = Comment.find(params[:comment_id])
+    
+    render json: @post, include: :comment, status: :ok
+    #inlude comments
   end
 
   # POST /posts
@@ -34,7 +37,9 @@ class PostsController < ApplicationController
   end
 
   # DELETE /posts/1
-  def destroy
+  def destroy 
+    @comments = Comment.find(params[:comment_id])
+    
     @post.destroy
   end
 
