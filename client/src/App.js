@@ -26,7 +26,7 @@ function App() {
     try {
       const userData = await loginUser(formData);
       setCurrentUser(userData);
-      // setError(null);
+      setError(null);
       history.push('/main');
     } catch (e) {
       setError("invalid login credentials");

@@ -31,9 +31,11 @@ function Main(props) {
   
   
   return ( 
-    <Switch>  
+    <Switch>   
       <div className="home">
-        <Route exact path="/post">
+        
+      </div>
+        <Route path="/post">
           <Post 
             handleCreate={handleCreate}
           />
@@ -46,13 +48,13 @@ function Main(props) {
         <Route path="/postdetail">
           <PostDetail/> 
         </Route>
-      </div>
     </Switch>
     
   )
 } 
 
 export default Main;
+       
 
 
 
