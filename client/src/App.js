@@ -1,4 +1,4 @@
-import { Switch, Route } from "react-router-dom";  
+import { Switch, Route, useHistory } from "react-router-dom";  
 import { loginUser, registerUser, verifyUser, removeToken } from './Services/users';
 import { useState, useEffect } from 'react';
 
@@ -16,40 +16,60 @@ function App() {
 
   useEffect(() => {
     const handleVerify = async () => {
-      const currentUser = await verifyUser();
-      setCurrentUser(currentUser)
+      const userData = await verifyUser();
+      setCurrentUser(userData)
     }
     handleVerify();
   }, [])
 
   const handleLogin = async (formData) => {
     try {
-      const currentUser = await loginUser(formData);
-      setCurrentUser(currentUser);
-      setError(null);
-      history.push('/');
+      const userData = await loginUser(formData);
+      setCurrentUser(userData);
+      // setError(null);
+      history.push('/main');
     } catch (e) {
       setError("invalid login credentials");
     }
+  } 
+  const handleRegister = async (formData) => {
+    try {
+      const currentUser = await registerUser(formData);
+      setCurrentUser(currentUser);
+      history.push('/main');
+    } catch (e) {
+      setError("invalid sign up info")
+    }
+  } 
+  const handleLogout = () => {
+    setCurrentUser(null);
+    localStorage.removeItem('authToken');
+    removeToken();
   }
+
   
   
   
   return (
     <div className="App">
       <Switch>  
-        <Route path="/signin">
+        <Route exact path="/">
           <SignIn 
             handleLogin={handleLogin}
-            error={error}
+            // error={error}
           />
         </Route> 
         <Route path="/register">
-          <Register/>
+          <Register 
+            handleRegister={handleRegister}
+          />
         </Route>  
-        <Route path="/">  
+        <Route exact path="/main">  
           {/* state can be passed Nav for username and Main for crud */}
-          <Layout>
+          <Layout
+          currentUser={currentUser}
+          handleLogout={handleLogout}
+          >
             <Main/>
           </Layout>
         </Route>

@@ -7,16 +7,16 @@ import { LinkContainer } from 'react-router-bootstrap';
 const Header = () => {
   return (
     <Navbar collapseOnSelect bg="light" expand="lg" className='header'> 
-      <LinkContainer to="/home">
-        <Navbar.Brand>ARTISTDEPRIMES</Navbar.Brand>
+      <LinkContainer to="/main">
+        <Navbar.Brand>ARTISTEDEPRIMES</Navbar.Brand>
       </LinkContainer>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto"> 
-          <LinkContainer to="about">
+          <LinkContainer to="/post">
             <Nav.Link>Post</Nav.Link>
-          </LinkContainer> 
-          <LinkContainer to="/contact">
+          </LinkContainer>  
+          <LinkContainer to="/">
             <Nav.Link>Sign Out</Nav.Link>
           </LinkContainer>
         </Nav>

@@ -29,8 +29,8 @@ const SignIn = (props) => {
         <p>{error}</p>
       }
       <label>
-        Username:
-        <input
+        <input 
+          placeholder="username"
           type='text'
           name='username'
           value={username}
@@ -39,8 +39,8 @@ const SignIn = (props) => {
       </label>
       <br />
       <label>
-        Password:
-        <input
+        <input 
+          placeholder="password"
           type='password'
           name='password'
           value={password}
@@ -48,8 +48,10 @@ const SignIn = (props) => {
         />
       </label>
       <br />
-      <Link to='/register'>Register</Link>
-      <button>Submit</button>
+      <Link to='/register'>
+        <button>Register</button>
+      </Link> 
+      <button>Enter</button>
     </form>
     
     
