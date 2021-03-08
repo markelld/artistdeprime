@@ -33,7 +33,6 @@ function Main(props) {
   return ( 
     <Switch>   
       <div className="home">
-        
       </div>
         <Route path="/post">
           <Post 
@@ -54,6 +53,7 @@ function Main(props) {
 } 
 
 export default Main;
+        
        
 
 
