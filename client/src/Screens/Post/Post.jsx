@@ -1,6 +1,8 @@
 import { useState } from 'react'; 
-import { Link } from 'react-router-dom'; 
-import Layout from "../../Components/Layout/Layout";
+import { Link, withRouter } from 'react-router-dom'; 
+import Layout from "../../Components/Layout/Layout"; 
+import Form from 'react-bootstrap/Form' 
+import "./Post.css";
 
 function Post(props) {
   const [formData, setFormData] = useState({
@@ -11,43 +13,48 @@ function Post(props) {
   const { handleCreate } = props; 
 
   const handleChange = (e) => { 
-    const { caption, image_url, value } = e.target; 
+    const { name, value } = e.target; 
     setFormData(prevState => ({ 
       ...prevState, 
-      [caption]: value, 
-      [image_url]: value
+      [name]: value
     }))
-  }
+  } 
   return (  
-    <Layout> 
-      <div className="newpost-form"> 
-        <form onSubmit={(e)=>{
-        e.preventDefault();
-        handleCreate(formData);
-      }}>
-        <h3>New Post</h3>
-          <input
-            type='text'
-            name='caption' 
-            placeholder="caption"
-            value={caption}
-            onChange={handleChange}
-          />
-          <br /> 
-          <input
-            type='text'
-            name='image_url' 
-            placeholder="image_url"
-            value={image_url}
-            onChange={handleChange}
-          />
-          <br /> 
-          <Link to="/main">
-            <button>Submit</button>
-          </Link>
-      </form>
+    <div className="newpost-form">  
+      <div>
+        <Form
+          onSubmit={(e) => {
+          e.preventDefault();
+          handleCreate(formData);
+          }}>  
+            <Form.Group>
+              <Form.Control 
+                type='text'
+                name='caption' 
+                placeholder="caption"
+                value={caption}
+                onChange={handleChange} 
+                required
+              />
+              </Form.Group>
+            <br />  
+            <Form.Group>
+              <Form.Control 
+                type='text'
+                name='image_url' 
+                placeholder="image_url"
+                value={image_url}
+                onChange={handleChange} 
+                required
+              />
+            </Form.Group>
+            <br /> 
+            {/* <Link to="/main"> */}
+              <button className="post-button">Post</button>
+            {/* </Link> */}
+          </Form>
       </div>
-    </Layout>
+    </div>
   )
 } 
 

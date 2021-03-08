@@ -1,10 +1,13 @@
 import { Switch, Route, useHistory } from "react-router-dom";  
 import { loginUser, registerUser, verifyUser, removeToken } from './Services/users';
 import { useState, useEffect } from 'react';
-
+import { getPosts, getOnePost, postPost, putPost, destroyPost } from "./Services/posts";
 import SignIn from "./Screens/SignIn/SignIn";
 import Register from "./Screens/Register/Register";  
-import Main from "./Components/Main"; 
+import Main from "./Components/Main";  
+import Post from "./Screens/Post/Post";  
+import PostEdit from "./Screens/PostEdit/PostEdit"; 
+import PostDetail from "./Screens/PostDetail/PostDetail"; 
 import Layout from "./Components/Layout/Layout";
 import './App.css';
 
@@ -12,7 +15,9 @@ function App() {
   
   const [currentUser, setCurrentUser] = useState(null);
   const [error, setError] = useState(null);
-  const history = useHistory();
+  const history = useHistory(); 
+  const [posts, setPosts] = useState([]);  
+  // const { currentUser } = props; 
 
   useEffect(() => {
     const handleVerify = async () => {
@@ -46,8 +51,24 @@ function App() {
     localStorage.removeItem('authToken');
     removeToken();
   }
-
+/// post 
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const postList = await getPosts();
+      setPosts(postList);
+    }
+    fetchPosts();
+  }, [])  
   
+  const handleCreate = async (postData) => {
+    const newPost = await postPost(postData);
+    setPosts(prevState => [...prevState, newPost]);
+    history.push('/main');
+  }
+  const handleDelete = async (id) => {
+    await destroyPost(id); 
+    setPosts(prevState => prevState.filter((post) => post.id !== id))
+  }
   
   
   return (
@@ -65,13 +86,27 @@ function App() {
           />
         </Route>  
         <Route exact path="/main">  
-          {/* state can be passed Nav for username and Main for crud */}
           <Layout
           currentUser={currentUser}
           handleLogout={handleLogout}
           >
-            <Main/>
+              <Main/>
           </Layout>
+        </Route>   
+        <Route path="/post"> 
+          <Layout>
+            <Post 
+              handleCreate={handleCreate}
+            />
+          </Layout>
+        </Route>
+        <Route path="/postedit">
+          <PostEdit 
+            handleDelete={handleDelete}
+          /> 
+        </Route> 
+        <Route path="/postdetail">
+          <PostDetail/> 
         </Route>
       </Switch>
     </div>
