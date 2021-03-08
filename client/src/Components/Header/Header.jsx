@@ -21,7 +21,7 @@ const Header = (props) => {
                 <Nav.Link>{currentUser.username }</Nav.Link>  
               </> 
               : 
-              <Link to="/"></Link>
+              <Link to="/"></Link> 
           } 
           <hr /> 
           {  

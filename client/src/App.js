@@ -63,7 +63,7 @@ function App() {
   const handleCreate = async (postData) => {
     const newPost = await postPost(postData);
     setPosts(prevState => [...prevState, newPost]);
-    history.push('/main');
+    // history.push('/main');
   }
   const handleDelete = async (id) => {
     await destroyPost(id); 
@@ -94,7 +94,7 @@ function App() {
           </Layout>
         </Route>   
         <Route path="/post"> 
-          <Layout>
+          <Layout currentUser={currentUser} >
             <Post 
               handleCreate={handleCreate}
             />

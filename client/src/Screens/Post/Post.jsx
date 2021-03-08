@@ -1,49 +1,63 @@
 import { useState } from 'react'; 
-import { Link, withRouter } from 'react-router-dom'; 
+import { Link, useHistory } from 'react-router-dom'; 
 import Layout from "../../Components/Layout/Layout"; 
 import Form from 'react-bootstrap/Form' 
 import "./Post.css";
 
 function Post(props) {
   const [formData, setFormData] = useState({
-    caption: '', 
-    image_url:''
+    image_url: '',
+    caption: '',
   });
-  const { caption, image_url } = formData; 
-  const { handleCreate } = props; 
-
+  const { image_url, caption } = formData; 
+  const { handleCreate } = props;  
+  const history = useHistory();
+ 
   const handleChange = (e) => { 
-    const { name, value } = e.target; 
-    setFormData(prevState => ({ 
-      ...prevState, 
-      [name]: value
-    }))
+    const { name, value } = e.target;  
+    const newPost = { [name]: value }
+    setFormData(formData => {
+      return {...formData, ...newPost}
+    })
   } 
   return (  
     <div className="newpost-form">  
       <div>
         <Form
           onSubmit={(e) => {
-          e.preventDefault();
-          handleCreate(formData);
+            e.preventDefault();
+            handleCreate(formData); 
+            history.push('/main');
           }}>  
             <Form.Group>
               <Form.Control 
+                // type='text'
+                // name='caption' 
+                // placeholder="caption"
+                // value={caption} 
+                // onChange={handleChange} 
+                // required 
                 type='text'
-                name='caption' 
-                placeholder="caption"
-                value={caption}
+                name='image_url' 
+                placeholder="image_url"
+                value={image_url}
                 onChange={handleChange} 
-                required
+                required 
               />
               </Form.Group>
             <br />  
             <Form.Group>
               <Form.Control 
+                // type='text'
+                // name='image_url' 
+                // placeholder="image_url"
+                // value={image_url}
+                // onChange={handleChange} 
+                // required 
                 type='text'
-                name='image_url' 
-                placeholder="image_url"
-                value={image_url}
+                name='caption' 
+                placeholder="caption"
+                value={caption} 
                 onChange={handleChange} 
                 required
               />
