@@ -90,24 +90,32 @@ function App() {
           currentUser={currentUser}
           handleLogout={handleLogout}
           >
-              <Main/>
+            <Main 
+              posts={posts} 
+
+              />
           </Layout>
-        </Route>   
+        </Route> 
+        
         <Route path="/post"> 
           <Layout currentUser={currentUser} >
             <Post 
               handleCreate={handleCreate}
             />
           </Layout>
-        </Route>
-        <Route path="/postedit">
+        </Route> 
+        <Layout currentUser={currentUser}>
+        <Route path="/postedit/:id/edit/">
           <PostEdit 
             handleDelete={handleDelete}
           /> 
         </Route> 
-        <Route path="/postdetail">
-          <PostDetail/> 
+        <Route path="/postdetail/:id">
+          <PostDetail 
+            posts={posts} 
+          /> 
         </Route>
+        </Layout>
       </Switch>
     </div>
   );

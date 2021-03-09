@@ -69,7 +69,7 @@ export default function Register(props) {
           <br />
           <button className="register-button">Submit</button> 
           <Link to="/">
-            <h6 className="login-link">Login</h6>
+            <h6 className="login-link">Already have an Account?</h6>
           </Link>
         </div>
       </div>

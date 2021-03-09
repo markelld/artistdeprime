@@ -1,4 +1,4 @@
-import Footer from "../Footer/Footer"; 
+// import Footer from "../Footer/Footer"; 
 import Header from "../Header/Header";
 
 
@@ -14,7 +14,7 @@ const Layout = (props) => {
         <div>
           {props.children} 
         </div> 
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   )
 } 
