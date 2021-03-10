@@ -25,7 +25,6 @@ function PostDetail(props) {
     <div className="postdetail-container">
       <img src={postItem?.image_url} className="postdetail-image" />
       <h4 className="caption">{postItem?.caption}</h4> 
-     
         <Form>
             {/* onSubmit={(e) => {
                 e.preventDefault();
@@ -55,7 +54,7 @@ function PostDetail(props) {
               className="delete-button" 
               >delete</button>
                 </Link>
-                <Link to="/postedit/:id/">
+                <Link to="/postedit/:id">
                   <button className="editpath-button">edit</button>
                 </Link>
               </div>
@@ -67,3 +66,4 @@ function PostDetail(props) {
 }
 
 export default PostDetail;
+     

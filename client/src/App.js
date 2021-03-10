@@ -72,13 +72,13 @@ function App() {
     setPosts(prevState => prevState.filter((post) => post.id !== id))
   } 
 
-  // const handleUpdate = async (id, formData) => {
-  //   const updatedPost = await putPost(id, postData); 
-  //   setPosts(prevState => prevState.map((post) => {
-  //     return post.id === Number(id) ? updatedPost : post
-  //   })); 
-  //   history.push('/main');
-  // }
+  const handleUpdate = async (id, formData) => {
+    const updatedPost = await putPost(id, formData); 
+    setPosts(prevState => prevState.map((post) => {
+      return post.id === Number(id) ? updatedPost : post
+    })); 
+    history.push('/main');
+  }
   /// comments 
   // useEffect(() => {
   //   const fetchComments = async () => {
@@ -134,9 +134,11 @@ function App() {
           </Layout>
         </Route> 
         <Layout currentUser={currentUser}>
-        <Route path="/postedit/:id/edit/">
+        <Route path="/postedit/:id">
           <PostEdit 
-              // handleUpdate={handleUpdate}
+              handleUpdate={handleUpdate} 
+              posts={posts} 
+              currentUser={currentUser}
           /> 
         </Route> 
         <Route path="/postdetail/:id">
