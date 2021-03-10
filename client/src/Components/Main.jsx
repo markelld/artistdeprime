@@ -4,9 +4,10 @@ import "./Main.css";
 
 
 function Main(props) { 
-  const { posts } = props; 
+  const { posts,currentUser } = props; 
   return (    
-      <>
+      <> 
+      
       {posts && ( 
         <div className="post-home">
           {posts.map((post) =>

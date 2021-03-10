@@ -6,10 +6,11 @@ import "./PostDetail.css";
 
 function PostDetail(props) {
   const [postItem, setPostItem] = useState(null); 
-
   const { id } = useParams();
   const { currentUser, handleDelete, comments, commentHandleCreate } = props; 
-  // const [formData, setFormData] = useState({
+
+
+// const [formData, setFormData] = useState({
   //   comment: "",
   // });
 
