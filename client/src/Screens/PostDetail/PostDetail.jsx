@@ -8,13 +8,13 @@ function PostDetail(props) {
   const [postItem, setPostItem] = useState(null);
   const { id } = useParams();
   const { currentUser, handleDelete } = props;
+
   // const [commentItem, setcommentItem] = useState({
   //   comment: "",
   // });
 
   useEffect(() => {
     const fetchPostItem = async () => {
-      console.log(id);
       const postData = await getOnePost(id);
       setPostItem(postData);
     };
@@ -49,8 +49,9 @@ function PostDetail(props) {
           {postItem &&
             (currentUser.id === postItem.user_id ? (
               <div className="button-div">
-                  <button onClick={() => handleDelete(postItem.id)}
-              className="delete-button" >delete</button>
+                <button onClick={() => handleDelete(postItem.id)}
+                className="delete-button" >delete</button> 
+                <button className="comment">comment</button>
                 <Link to={`/postedit/${id}`}>
                   <button className="editpath-button">edit</button>
                 </Link>

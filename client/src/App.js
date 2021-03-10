@@ -2,7 +2,7 @@ import { Switch, Route, useHistory } from "react-router-dom";
 import { loginUser, registerUser, verifyUser, removeToken } from './Services/users';
 import { useState, useEffect } from 'react';
 import { getPosts, getOnePost, postPost, putPost, destroyPost } from "./Services/posts";
-// import { getComments, getOneComment, postComment, putComment, destroyComment} from "./Services/comments";
+import { getComments, getOneComment, postComment, putComment, destroyComment} from "./Services/comments";
 import SignIn from "./Screens/SignIn/SignIn";
 import Register from "./Screens/Register/Register";  
 import Main from "./Components/Main";  
@@ -18,7 +18,7 @@ function App() {
   const [error, setError] = useState(null);
   const history = useHistory(); 
   const [posts, setPosts] = useState([]);   
-  // const [comments, setComments] = useState([]);
+  const [comments, setComments] = useState([]);
   // const { currentUser } = props; 
 
   useEffect(() => {
@@ -81,13 +81,14 @@ function App() {
     history.push('/main');
   }
   /// comments 
-  // useEffect(() => {
-  //   const fetchComments = async () => {
-  //     const commentList = await getComments() 
-  //     setComments(commentList)
-  //   } 
-  //   fetchComments();
-  // }, [])  
+  useEffect(() => {
+    const fetchComments = async () => {
+      const commentList = await getComments() 
+      setComments(commentList) 
+      console.log(comments)
+    } 
+    fetchComments();
+  }, [])  
 
   // const commentHandleCreate = async (commentData) => {
   //   const newComment = await postComment(commentData); 
@@ -146,7 +147,8 @@ function App() {
           <PostDetail 
               posts={posts}  
               handleDelete={handleDelete} 
-              currentUser={currentUser}
+              currentUser={currentUser} 
+              // comments={comments}
           /> 
         </Route>
         </Layout>
