@@ -16,6 +16,10 @@
   border-radius: 10px;  
   margin-bottom: 15px; 
   padding:25px;
+} 
+.postdetail-image:hover {
+  box-shadow: 5px 5px 10px #151514;
+  transition: all 0.2s;
 }
 .comment{
   margin:10px; 
@@ -46,7 +50,7 @@
 
 .comment-form{ 
   width:40vw;
-  margin-bottom: 105px;
+  margin-bottom: 55px;
 } 
 
 @media screen and (max-width: 900px) { 

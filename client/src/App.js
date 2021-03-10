@@ -90,10 +90,10 @@ function App() {
     fetchComments();
   }, [])  
 
-  // const commentHandleCreate = async (commentData) => {
-  //   const newComment = await postComment(commentData); 
-  //   setComment(prevState => [...prevState, newComment]);
-  // } 
+  const commentHandleCreate = async (commentData) => {
+    const newComment = await postComment(commentData); 
+    setComments(prevState => [...prevState, newComment]);
+  } 
 
   // const commentHandleDelete = async (id) => {
   //   await destroyComment(id); 
@@ -148,7 +148,8 @@ function App() {
               posts={posts}  
               handleDelete={handleDelete} 
               currentUser={currentUser} 
-              comments={comments}
+              comments={comments} 
+              commentHandleCreate={commentHandleCreate}
           /> 
         </Route>
         </Layout>

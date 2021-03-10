@@ -1,17 +1,10 @@
 import { Link } from "react-router-dom";  
 import React from "react";
-// import { getPosts, getOnePost, postPost, putPost, destroyPost } from "../Services/posts";
-// import { useState, useEffect } from 'react';
 import "./Main.css";
-// import Post from "../Screens/Post/Post"; 
-// import PostEdit from "./Screens/PostEdit/PostEdit"; 
-// import PostDetail from "./Screens/PostDetail/PostDetail"; 
+
 
 function Main(props) { 
   const { posts } = props; 
-  // const { currentUser } = props;
-  //state called allpost ,make useEffect pass posts and refresh whenever post is made,[posts]
-  
   return (    
       <>
       {posts && ( 

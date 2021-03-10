@@ -8,7 +8,7 @@ function PostDetail(props) {
   const [postItem, setPostItem] = useState(null); 
 
   const { id } = useParams();
-  const { currentUser, handleDelete, comments } = props; 
+  const { currentUser, handleDelete, comments, commentHandleCreate } = props; 
 
 
   const [commentItem, setCommentItem] = useState({
@@ -21,13 +21,12 @@ function PostDetail(props) {
       setPostItem(postData);
     };
     fetchPostItem();
-  }, [id]);
+  }, [id]); 
 
   return (
     <div className="postdetail-container">
       <img src={postItem?.image_url} className="postdetail-image" />
       <h4 className="caption">{postItem?.caption}</h4>  
-      {/* <h5>{comments?.comment} hi </h5>  */}
       { postItem?.comments.map((comment) => (
         <h5>{comment.comment}</h5> 
       ))}
@@ -51,13 +50,13 @@ function PostDetail(props) {
                   cols={35}
                   rows={4}/>
             </Form.Group>
-        </Form>
+      </Form> 
+       <button className="comment">comment</button>
           {postItem &&
             (currentUser.id === postItem.user_id ? (
               <div className="button-div">
                 <button onClick={() => handleDelete(postItem.id)}
-                className="delete-button" >delete</button> 
-                <button className="comment">comment</button>
+                  className="delete-button" >delete</button> 
                 <Link to={`/postedit/${id}`}>
                   <button className="editpath-button">edit</button>
                 </Link>
