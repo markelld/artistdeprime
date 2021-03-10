@@ -9,11 +9,9 @@ function PostDetail(props) {
 
   const { id } = useParams();
   const { currentUser, handleDelete, comments, commentHandleCreate } = props; 
-
-
-  const [commentItem, setCommentItem] = useState({
-    comment: "",
-  });
+  // const [formData, setFormData] = useState({
+  //   comment: "",
+  // });
 
   useEffect(() => {
     const fetchPostItem = async () => {
@@ -21,7 +19,15 @@ function PostDetail(props) {
       setPostItem(postData);
     };
     fetchPostItem();
-  }, [id]); 
+  }, [id]);  
+  
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target; 
+  //   const newComment = { [name]: value } 
+  //   setFormData(formData => {
+  //     return {...formData, ...newPost }
+  //   })
+  // }
 
   return (
     <div className="postdetail-container">
@@ -33,8 +39,7 @@ function PostDetail(props) {
         <Form>
             {/* onSubmit={(e) => {
                 e.preventDefault();
-                handleCreate(formData); 
-                history.push('/main');
+                commentHandleCreate(formData); 
               }}>   */}
             <Form.Group>
                 <Form.Control

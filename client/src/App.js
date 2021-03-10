@@ -19,7 +19,7 @@ function App() {
   const history = useHistory(); 
   const [posts, setPosts] = useState([]);   
   const [comments, setComments] = useState([]);
-  // const { currentUser } = props; 
+   
 
   useEffect(() => {
     const handleVerify = async () => {
@@ -65,7 +65,6 @@ function App() {
   const handleCreate = async (postData) => {
     const newPost = await postPost(postData);
     setPosts(prevState => [...prevState, newPost]);
-    // history.push('/main');
   }
   const handleDelete = async (id) => {
     await destroyPost(id); 
