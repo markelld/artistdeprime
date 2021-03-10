@@ -26,4 +26,9 @@
 .image-post:hover {
   box-shadow: 5px 5px 10px #151514;
   transition: all 0.2s;
+} 
+
+.user-name{
+  text-decoration: none; 
+  color:#151514;
 }

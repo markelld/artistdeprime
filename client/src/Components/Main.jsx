@@ -14,7 +14,7 @@ function Main(props) {
               <div className="post-container">
                 <Link to={`/postdetail/${post.id}`}>
                   <img src={post.image_url} className="image-post" />
-                  <p>{post.user.username}</p>
+                  <p className="user-name">{post.user.username}</p>
                 </Link>
               </div>
             </React.Fragment>
