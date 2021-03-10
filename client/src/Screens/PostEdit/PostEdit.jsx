@@ -17,8 +17,8 @@ function PostEdit(props) {
 
   useEffect(() => {
     const prefillFormData = () => {  
-      debugger
-      const postItem = posts.filter((post) => post.id === Number(id)); 
+      const postItem = posts.find((post) => post.id === Number(id));  
+      console.log(postItem)
       setFormData({
         image_url: postItem.image_url,
         caption: postItem.caption

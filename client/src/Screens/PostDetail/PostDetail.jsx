@@ -54,7 +54,7 @@ function PostDetail(props) {
               className="delete-button" 
               >delete</button>
                 </Link>
-                <Link to="/postedit/:id">
+                <Link to={`/postedit/${id}`}>
                   <button className="editpath-button">edit</button>
                 </Link>
               </div>
