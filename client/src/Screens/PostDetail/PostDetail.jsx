@@ -49,11 +49,8 @@ function PostDetail(props) {
           {postItem &&
             (currentUser.id === postItem.user_id ? (
               <div className="button-div">
-                <Link to="main">
-            <button onClick={() => handleDelete(postItem.id)}
-              className="delete-button" 
-              >delete</button>
-                </Link>
+                  <button onClick={() => handleDelete(postItem.id)}
+              className="delete-button" >delete</button>
                 <Link to={`/postedit/${id}`}>
                   <button className="editpath-button">edit</button>
                 </Link>
@@ -64,6 +61,8 @@ function PostDetail(props) {
     </div>
   );
 }
+               
+                
 
 export default PostDetail;
      

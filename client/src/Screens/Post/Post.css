@@ -1,17 +1,17 @@
 .newpost-form{
-  display:flex;  
-  flex-direction: column;
-  justify-content:center; 
-  align-items: center; 
-  width: 100%; 
-  height:80vh;  
-  background-color: #F9F9F9; 
+  margin:100px; 
+  border: 2px solid #151514; 
+  border-radius: 10px;
   
-} 
+}  
+.postform-edit{
+  padding:30px;
+}
 .post-button{
   margin:10px; 
   font-size: 20px; 
   border-radius: 5px; 
   background-color: #151514; 
   color: #F9F9F9 ;
-} 
+}  
+

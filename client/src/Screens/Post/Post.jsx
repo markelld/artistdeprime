@@ -22,9 +22,9 @@ function Post(props) {
     })
   }
   return (
-    < div className = "newpost-form" >
-    <div>
-      <Form
+    < div  >
+    <div className = "newpost-form">
+      <Form className = "postform-edit"
         onSubmit={(e) => {
           e.preventDefault();
           handleCreate(formData);
@@ -32,12 +32,6 @@ function Post(props) {
         }}>
         <Form.Group>
           <Form.Control
-            // type='text'
-            // name='caption' 
-            // placeholder="caption"
-            // value={caption} 
-            // onChange={handleChange} 
-            // required 
             type='text'
             name='image_url'
             placeholder="image_url"
@@ -49,12 +43,6 @@ function Post(props) {
         <br />
         <Form.Group>
           <Form.Control
-            // type='text'
-            // name='image_url' 
-            // placeholder="image_url"
-            // value={image_url}
-            // onChange={handleChange} 
-            // required 
             type='text'
             name='caption'
             placeholder="caption"
@@ -64,9 +52,7 @@ function Post(props) {
           />
         </Form.Group>
         <br />
-        {/* <Link to="/main"> */}
         <button className="post-button">Post</button>
-        {/* </Link> */}
       </Form>
     </div>
     </div >
@@ -74,3 +60,5 @@ function Post(props) {
 } 
 
 export default Post;
+        
+        

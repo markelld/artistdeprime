@@ -41,4 +41,15 @@
 .comment-form{ 
   width:40vw;
   margin-bottom: 105px;
+} 
+
+@media screen and (max-width: 900px) { 
+  .postdetail-image{
+    width:80%; 
+    height:80%; 
+    border-radius: 10px;  
+    margin-bottom: 15px; 
+    padding:25px;
+  }
+  
 }

@@ -41,9 +41,9 @@ function PostEdit(props) {
   
   
   return ( 
-    < div className = "editpost-form" >
-    <div>
-      <Form
+    < div  >
+    <div className = "editpost-form" >
+      <Form className="form-edit"
         onSubmit={(e) => {
           e.preventDefault();
           handleUpdate(id,formData);
@@ -57,7 +57,8 @@ function PostEdit(props) {
             placeholder="image_url"
             value={image_url}
             onChange={handleChange}
-            required
+            required 
+            cols={35}
           />
         </Form.Group>
         <br />

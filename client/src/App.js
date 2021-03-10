@@ -70,6 +70,7 @@ function App() {
   const handleDelete = async (id) => {
     await destroyPost(id); 
     setPosts(prevState => prevState.filter((post) => post.id !== id))
+    history.push('/main');
   } 
 
   const handleUpdate = async (id, formData) => {
