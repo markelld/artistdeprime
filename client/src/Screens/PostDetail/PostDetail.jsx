@@ -5,13 +5,15 @@ import Form from "react-bootstrap/Form";
 import "./PostDetail.css";
 
 function PostDetail(props) {
-  const [postItem, setPostItem] = useState(null);
-  const { id } = useParams();
-  const { currentUser, handleDelete } = props;
+  const [postItem, setPostItem] = useState(null); 
 
-  // const [commentItem, setcommentItem] = useState({
-  //   comment: "",
-  // });
+  const { id } = useParams();
+  const { currentUser, handleDelete, comments } = props; 
+
+
+  const [commentItem, setCommentItem] = useState({
+    comment: "",
+  });
 
   useEffect(() => {
     const fetchPostItem = async () => {
@@ -24,7 +26,11 @@ function PostDetail(props) {
   return (
     <div className="postdetail-container">
       <img src={postItem?.image_url} className="postdetail-image" />
-      <h4 className="caption">{postItem?.caption}</h4> 
+      <h4 className="caption">{postItem?.caption}</h4>  
+      {/* <h5>{comments?.comment} hi </h5>  */}
+      { postItem?.comments.map((comment) => (
+        <h5>{comment.comment}</h5> 
+      ))}
         <Form>
             {/* onSubmit={(e) => {
                 e.preventDefault();

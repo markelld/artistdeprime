@@ -85,7 +85,7 @@ function App() {
     const fetchComments = async () => {
       const commentList = await getComments() 
       setComments(commentList) 
-      console.log(comments)
+      console.log(commentList)
     } 
     fetchComments();
   }, [])  
@@ -148,7 +148,7 @@ function App() {
               posts={posts}  
               handleDelete={handleDelete} 
               currentUser={currentUser} 
-              // comments={comments}
+              comments={comments}
           /> 
         </Route>
         </Layout>
