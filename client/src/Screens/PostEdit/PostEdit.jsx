@@ -24,9 +24,9 @@ function PostEdit(props) {
         caption: postItem.caption
       });
     } 
-    //  if (posts.length) {
+      if (posts.length) {
     prefillFormData();
-    // }
+     }
   },[posts, id])
   
   const handleChange = (e) => {
@@ -46,7 +46,7 @@ function PostEdit(props) {
       <Form
         onSubmit={(e) => {
           e.preventDefault();
-          handleUpdate(formData,id);
+          handleUpdate(id,formData);
           history.push('/main');
         }}>
         <Form.Group>
@@ -55,7 +55,7 @@ function PostEdit(props) {
             type='text'
             name='image_url'
             placeholder="image_url"
-            value={formData.image_url}
+            value={image_url}
             onChange={handleChange}
             required
           />
@@ -67,7 +67,7 @@ function PostEdit(props) {
             type='text'
             name='caption'
             placeholder="caption"
-            value={formData.caption}
+            value={caption}
             onChange={handleChange}
             required
           />
