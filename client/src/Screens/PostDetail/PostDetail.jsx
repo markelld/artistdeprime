@@ -10,9 +10,9 @@ function PostDetail(props) {
   const { currentUser, handleDelete, comments, commentHandleCreate } = props; 
 
 
-// const [formData, setFormData] = useState({
-  //   comment: "",
-  // });
+const [formData, setFormData] = useState({
+    comment: "",
+  });
 
   useEffect(() => {
     const fetchPostItem = async () => {
@@ -22,13 +22,13 @@ function PostDetail(props) {
     fetchPostItem();
   }, [id]);  
   
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target; 
-  //   const newComment = { [name]: value } 
-  //   setFormData(formData => {
-  //     return {...formData, ...newPost }
-  //   })
-  // }
+  const handleChange = (e) => {
+    const { name, value } = e.target; 
+    const newComment = { [name]: value } 
+    setFormData(formData => {
+      return {...formData, ...newComment }
+    })
+  }
 
   return (
     <div className="postdetail-container">
@@ -38,17 +38,17 @@ function PostDetail(props) {
         <h5>{comment.comment}</h5> 
       ))}
         <Form>
-            {/* onSubmit={(e) => {
+            onSubmit={(e) => {
                 e.preventDefault();
                 commentHandleCreate(formData); 
-              }}>   */}
+              }}>  
             <Form.Group>
                 <Form.Control
                   type="text"
                   name="comment"
                   placeholder="comment"
-                  // value={comment}
-                  // onChange={handleChange}
+                  value={comment}
+                  onChange={handleChange}
                   required
                   className="comment-form"
                   size="lg"
