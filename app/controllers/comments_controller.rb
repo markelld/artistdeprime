@@ -5,19 +5,19 @@ class CommentsController < ApplicationController
   def index
     @comments = Comment.all
 
-    render json: @comments, unclude: :user
+    render json: @comments, include: :user
   end
 
   # GET /comments/1
   def show 
-    @posts = Post.find(params[:post_id])
+    @comment = Comment.find(params[:id])
     render json: @comment, include: [:post, :user], status: :ok
   end
 
   # POST /comments
   def create
     @comment = Comment.new(comment_params)
-    @post.user = @current_user
+    @comment.user = @current_user
     if @comment.save
       render json: @comment, status: :created, location: @comment
     else

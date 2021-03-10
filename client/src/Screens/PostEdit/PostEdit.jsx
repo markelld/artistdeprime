@@ -1,14 +1,30 @@
+// import { useState, useEffect } from 'react';
+// import { useParams } from 'react-router-dom';
 
 
 
+// function PostEdit(props) {
+  
+//   const [formData, setFormData] = useState({
+//     image_url: "",
+//     caption: ""
+//   }); 
+//   const { image_url, caption } = formData;
+//   const { posts, handleUpdate } = props; 
+//   const { id } = useParams(); 
 
-function PostEdit() {
-  return ( 
-    <div>
+//   useEffect(() =>)
 
-    </div>
+  
+  
+  
+  
+//   return ( 
+//     <div>
+
+//     </div>
     
-  )
-} 
+//   )
+// } 
 
-export default PostEdit;
+// export default PostEdit;

@@ -1,1 +1,44 @@
+.postdetail-container{
+  display: flex;   
+  flex-direction:column;
+  width:100%; 
+  height:auto; 
+  padding-top:40px;  
+  justify-content: center; 
+  align-items: center; 
+  margin-top: 80px; 
+  margin-bottom: 150px;
+} 
 
+.postdetail-image{
+  width:40%; 
+  height:40%; 
+  border-radius: 10px;  
+  margin-bottom: 15px; 
+  padding:25px;
+}
+
+.delete-button{
+  margin:10px; 
+  font-size: 20px; 
+  border-radius: 5px; 
+  background-color: #151514; 
+  color: #F9F9F9 ;
+} 
+
+.editpath-button{
+  margin:10px; 
+  font-size: 20px; 
+  border-radius: 5px; 
+  background-color: #151514; 
+  color: #F9F9F9 ;
+} 
+
+.caption{
+  padding-bottom: 15px;
+} 
+
+.comment-form{ 
+  width:40vw;
+  margin-bottom: 105px;
+}

@@ -8,22 +8,27 @@ import "./Main.css";
 // import PostDetail from "./Screens/PostDetail/PostDetail"; 
 
 function Main(props) { 
-  const { posts } = props;
-  
+  const { posts } = props; 
+  // const { currentUser } = props;
+  //state called allpost ,make useEffect pass posts and refresh whenever post is made,[posts]
   
   return (    
-      <div className="post-home">
-        {posts.map((post) =>  
-          <React.Fragment key={post.id} > 
-            <div className="post-container">
-              <Link to={`/postdetail/${post.id}`}>
-                <img src={post.image_url}  className="image-post"/> 
-                <p>{post.user.username}</p>
-              </Link> 
-            </div>
-          </React.Fragment>
-      )}
-      </div>
+      <>
+      {posts && ( 
+        <div className="post-home">
+          {posts.map((post) =>
+            <React.Fragment key={post.id} >
+              <div className="post-container">
+                <Link to={`/postdetail/${post.id}`}>
+                  <img src={post.image_url} className="image-post" />
+                  <p>{post.user.username}</p>
+                </Link>
+              </div>
+            </React.Fragment>
+          )}
+        </div>)
+      } 
+      </>
   )
 } 
 

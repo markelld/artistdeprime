@@ -2,6 +2,7 @@ import { Switch, Route, useHistory } from "react-router-dom";
 import { loginUser, registerUser, verifyUser, removeToken } from './Services/users';
 import { useState, useEffect } from 'react';
 import { getPosts, getOnePost, postPost, putPost, destroyPost } from "./Services/posts";
+// import { getComments, getOneComment, postComment, putComment, destroyComment} from "./Services/comments";
 import SignIn from "./Screens/SignIn/SignIn";
 import Register from "./Screens/Register/Register";  
 import Main from "./Components/Main";  
@@ -16,7 +17,8 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [error, setError] = useState(null);
   const history = useHistory(); 
-  const [posts, setPosts] = useState([]);  
+  const [posts, setPosts] = useState([]);   
+  // const [comments, setComments] = useState([]);
   // const { currentUser } = props; 
 
   useEffect(() => {
@@ -68,8 +70,35 @@ function App() {
   const handleDelete = async (id) => {
     await destroyPost(id); 
     setPosts(prevState => prevState.filter((post) => post.id !== id))
-  }
-  
+  } 
+
+  // const handleUpdate = async (id, formData) => {
+  //   const updatedPost = await putPost(id, postData); 
+  //   setPosts(prevState => prevState.map((post) => {
+  //     return post.id === Number(id) ? updatedPost : post
+  //   })); 
+  //   history.push('/main');
+  // }
+  /// comments 
+  // useEffect(() => {
+  //   const fetchComments = async () => {
+  //     const commentList = await getComments() 
+  //     setComments(commentList)
+  //   } 
+  //   fetchComments();
+  // }, [])  
+
+  // const commentHandleCreate = async (commentData) => {
+  //   const newComment = await postComment(commentData); 
+  //   setComment(prevState => [...prevState, newComment]);
+  // } 
+
+  // const commentHandleDelete = async (id) => {
+  //   await destroyComment(id); 
+  //   setComments(prevState => prevState.filter((comment) => comment.id !== id))
+  // }
+
+
   
   return (
     <div className="App">
@@ -92,7 +121,7 @@ function App() {
           >
             <Main 
               posts={posts} 
-
+              currentUser={currentUser}
               />
           </Layout>
         </Route> 
@@ -107,12 +136,14 @@ function App() {
         <Layout currentUser={currentUser}>
         <Route path="/postedit/:id/edit/">
           <PostEdit 
-            handleDelete={handleDelete}
+              // handleUpdate={handleUpdate}
           /> 
         </Route> 
         <Route path="/postdetail/:id">
           <PostDetail 
-            posts={posts} 
+              posts={posts}  
+              handleDelete={handleDelete} 
+              currentUser={currentUser}
           /> 
         </Route>
         </Layout>
