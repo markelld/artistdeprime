@@ -1,7 +1,8 @@
 .header{
   color: black;
   font-weight: 700; 
-  height:60px;
+  height:60px;  
+  margin-bottom: 90px;
   } 
   a.nav.link{
     color: black;

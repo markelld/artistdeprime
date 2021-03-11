@@ -1,6 +1,5 @@
 import { useState } from 'react'; 
-import { Link, useHistory } from 'react-router-dom'; 
-import Layout from "../../Components/Layout/Layout"; 
+import { useHistory } from 'react-router-dom'; 
 import Form from 'react-bootstrap/Form' 
 import "./Post.css";
 

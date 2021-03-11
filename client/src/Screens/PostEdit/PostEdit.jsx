@@ -11,7 +11,7 @@ function PostEdit(props) {
     caption: ""
   }); 
   const { image_url, caption } = formData;
-  const { posts, handleUpdate,currentUser } = props; 
+  const { posts, handleUpdate } = props; 
   const { id } = useParams(); 
   const history = useHistory(); 
 
@@ -43,7 +43,7 @@ function PostEdit(props) {
   return ( 
     < div  >
     <div className = "editpost-form" >
-      <Form className="form-edit"
+      <Form className="form-"
         onSubmit={(e) => {
           e.preventDefault();
           handleUpdate(id,formData);

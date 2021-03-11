@@ -1,8 +1,9 @@
 import { Switch, Route, useHistory } from "react-router-dom";  
 import { loginUser, registerUser, verifyUser, removeToken } from './Services/users';
 import { useState, useEffect } from 'react';
-import { getPosts, getOnePost, postPost, putPost, destroyPost } from "./Services/posts";
-import { getComments, getOneComment, postComment, putComment, destroyComment} from "./Services/comments";
+import { getPosts, postPost, putPost, destroyPost } from "./Services/posts";
+import { getComments, postComment } from "./Services/comments";
+
 import SignIn from "./Screens/SignIn/SignIn";
 import Register from "./Screens/Register/Register";  
 import Main from "./Components/Main";  
@@ -18,7 +19,8 @@ function App() {
   const [error, setError] = useState(null);
   const history = useHistory(); 
   const [posts, setPosts] = useState([]);   
-  const [comments, setComments] = useState([]);
+  const [comments, setComments] = useState([]); 
+  const [refresh, setRefresh] = useState(false);
    
 
   useEffect(() => {
@@ -80,24 +82,20 @@ function App() {
     history.push('/main');
   }
   /// comments 
+  
   useEffect(() => {
     const fetchComments = async () => {
       const commentList = await getComments() 
       setComments(commentList) 
-      console.log(commentList)
     } 
     fetchComments();
   }, [])  
 
   const commentHandleCreate = async (commentData) => {
     const newComment = await postComment(commentData); 
-    setComments(prevState => [...prevState, newComment]);
+    setComments(prevState => [...prevState, newComment]); 
+    setRefresh(prev => !prev)
   } 
-
-  // const commentHandleDelete = async (id) => {
-  //   await destroyComment(id); 
-  //   setComments(prevState => prevState.filter((comment) => comment.id !== id))
-  // }
 
 
   
@@ -148,7 +146,8 @@ function App() {
               handleDelete={handleDelete} 
               currentUser={currentUser} 
               comments={comments} 
-              commentHandleCreate={commentHandleCreate}
+              commentHandleCreate={commentHandleCreate} 
+              refresh={refresh}
           /> 
         </Route>
         </Layout>

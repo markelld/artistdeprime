@@ -1,5 +1,5 @@
 import { getOnePost } from "../../Services/posts";
-import { useParams, useHistory, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form"; 
 import "./PostDetail.css";
@@ -7,20 +7,27 @@ import "./PostDetail.css";
 function PostDetail(props) {
   const [postItem, setPostItem] = useState(null); 
   const { id } = useParams();
-  const { currentUser, handleDelete, comments, commentHandleCreate } = props; 
+  const { currentUser, handleDelete, comments, commentHandleCreate, refresh } = props; 
 
 
 const [formData, setFormData] = useState({
-    comment: "",
+  comment: "", 
+  post_id: "", 
+  user_id: "",
   });
 
   useEffect(() => {
     const fetchPostItem = async () => {
       const postData = await getOnePost(id);
-      setPostItem(postData);
+      setPostItem(postData);   
+      if (currentUser) {
+        setFormData(formData => {
+          return { ...formData, post_id: id, user_id: `${currentUser.id}` }
+        })
+      }
     };
     fetchPostItem();
-  }, [id]);  
+  }, [id,refresh]);  
   
   const handleChange = (e) => {
     const { name, value } = e.target; 
@@ -37,27 +44,27 @@ const [formData, setFormData] = useState({
       { postItem?.comments.map((comment) => (
         <h5>{comment.comment}</h5> 
       ))}
-        <Form>
+        <Form
             onSubmit={(e) => {
-                e.preventDefault();
-                commentHandleCreate(formData); 
+            e.preventDefault();
+            commentHandleCreate(formData); 
               }}>  
             <Form.Group>
                 <Form.Control
                   type="text"
                   name="comment"
                   placeholder="comment"
-                  value={comment}
+                  value={formData.comment}
                   onChange={handleChange}
                   required
                   className="comment-form"
                   size="lg"
                   as="textarea"
                   cols={35}
-                  rows={4}/>
+                  rows={3}/>
             </Form.Group>
-      </Form> 
-       <button className="comment">comment</button>
+            <button className="comment">comment</button>
+        </Form> 
           {postItem &&
             (currentUser.id === postItem.user_id ? (
               <div className="button-div">
@@ -73,8 +80,7 @@ const [formData, setFormData] = useState({
     </div>
   );
 }
-               
                 
 
 export default PostDetail;
-     
+      
