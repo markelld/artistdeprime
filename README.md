@@ -2,7 +2,7 @@
 
 _**Project Title**  
 
-Artiste Déprimé
+Artiste 
   
 The project inspiration came from my love for art and photography. So I decided to create a site for artist to post there work,events or anything they wish. My goal is to create a community online strictly for artist.
 
